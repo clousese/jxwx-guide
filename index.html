@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>传说导航页</title>
+    <meta name="keywords" content="TVBOX,影视仓,接口,影视资源">
+    <meta name="description" content="传说导航页 - 简约设计，专注功能">
+    <style>
+        :root {
+            --primary: #3498db;
+            --secondary: #2ecc71;
+            --danger: #e74c3c;
+            --warning: #f39c12;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+        }
+        
+        h1 {
+            font-size: 24px;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .notice {
+            background-color: white;
+            border-left: 4px solid var(--danger);
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .section-title {
+            font-size: 18px;
+            color: var(--dark);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .btn-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+        
+        .btn {
+            display: block;
+            padding: 12px 15px;
+            border-radius: 6px;
+            text-align: left;
+            font-size: 15px;
+            font-weight: 500;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+        
+        .btn-danger {
+            background-color: var(--danger);
+        }
+        
+        .btn-warning {
+            background-color: var(--warning);
+        }
+        
+        .btn-dark {
+            background-color: var(--dark);
+        }
+        
+        /* 复制按钮样式 */
+        .btn-copy::after {
+            content: "复制";
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 13px;
+            opacity: 0.8;
+        }
+        
+        /* 跳转按钮样式 */
+        .btn-link::after {
+            content: "跳转";
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 13px;
+            opacity: 0.8;
+        }
+        
+        .contact {
+            text-align: center;
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        
+        .qq-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 20px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #95a5a6;
+            font-size: 13px;
+        }
+        
+        @media (min-width: 600px) {
+            .btn-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="favicon.png" alt="传说TVBOX" class="logo">
+            <h1>传说导航页</h1>
+            <p class="subtitle">精选接口 · 一键复制 · 永久免费</p>
+        </header>
+        
+        <div class="notice">
+            请收藏本页，防止失联！
+        </div>
+        
+        <!-- 播放线路 -->
+        <div class="section">
+            <h2 class="section-title">播放线路</h2>
+            <div class="btn-grid">
+                <button class="btn btn-primary btn-copy" onclick="copyToClipboard('http://tjf1100.serv00.net/')">线路A - 主线路</button>
+                <button class="btn btn-primary btn-copy" onclick="copyToClipboard('http://tot.totalh.net/api.txt')">线路B - 备用线路</button>
+                <button class="btn btn-secondary btn-copy" onclick="copyToClipboard('http://tvbox.home.kg/')">防屏蔽线路</button>
+                <button class="btn btn-danger btn-copy" onclick="copyToClipboard('./')">备用</button>
+            </div>
+        </div>
+        
+        <!-- 资源仓库 -->
+        <div class="section">
+            <h2 class="section-title">资源仓库</h2>
+            <div class="btn-grid">
+                <button class="btn btn-dark btn-copy" onclick="copyToClipboard('http://免费接口.ignorelist.com/')">通用仓库</button>
+                <button class="btn btn-dark btn-copy" onclick="copyToClipboard('http://tot.totalh.net/2022.txt')">备用仓1</button>
+                <button class="btn btn-dark btn-copy" onclick="copyToClipboard('./')">备用</button>
+                <button class="btn btn-warning btn-copy" onclick="copyToClipboard('http://kkk.888.3116598.xyz/user/tttt.php')">TV接口</button>
+            </div>
+        </div>
+        
+        <!-- 其他资源 -->
+        <div class="section">
+            <h2 class="section-title">其他资源</h2>
+            <div class="btn-grid">
+                <a href="https://docs.qq.com/sheet/DQkRDZnlia2hyeFR5" class="btn btn-link" style="background-color: #1abc9c;">内部教程</a>
+                <a href="./api/index.html" class="btn btn-link" style="background-color: #1abc9c;">工具箱</a>
+                <a href="./" class="btn btn-link" style="background-color: #95a5a6;">备用</a>
+                <a href="./" class="btn btn-link" style="background-color: #95a5a6;">备用</a>
+            </div>
+        </div>
+        
+        <div class="contact">
+            <p>联系QQ: 710295770</p>
+            <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=JN_q64Zyczm4xrpV_vDlECTisXW8Gg2H&authKey=ts4NpUnSiHzvI4RA5%2F2%2FCmKGzMxSeNaWhcCqvzOFVZMY3Jv50Z3wqGs%2BGiyo6HHl&noverify=0&group_code=621399056" 
+               target="_blank" class="qq-link">
+                点击加入QQ群
+            </a>
+        </div>
+        
+        <footer>
+            <p>© 2025-2029 传说. All Rights Reserved</p>
+        </footer>
+    </div>
+
+<script>
+    function copyToClipboard(text) {
+        // 方法1: 使用现代Clipboard API
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(text).then(() => {
+                showCopySuccess(text);
+            }).catch(err => {
+                // 如果Clipboard API失败，尝试方法2
+                fallbackCopyText(text);
+            });
+        } else {
+            // 如果不支持Clipboard API，直接使用方法2
+            fallbackCopyText(text);
+        }
+    }
+
+    // 备用复制方法
+    function fallbackCopyText(text) {
+        try {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';  // 防止页面滚动
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            // 尝试执行复制命令
+            const successful = document.execCommand('copy');
+            document.body.removeChild(textarea);
+            
+            if(successful) {
+                showCopySuccess(text);
+            } else {
+                showCopyFail(text);
+            }
+        } catch (err) {
+            showCopyFail(text);
+        }
+    }
+
+    // 显示复制成功
+    function showCopySuccess(text) {
+        alert('已成功复制: ' + text);
+    }
+
+    // 显示复制失败
+    function showCopyFail(text) {
+        // 提供手动复制选项
+        const shouldCopy = confirm('自动复制失败，请手动复制以下内容:\n\n' + text + '\n\n点击"确定"后，文本将显示在输入框中，请按Ctrl+C复制');
+        if (shouldCopy) {
+            const input = document.createElement('input');
+            input.value = text;
+            document.body.appendChild(input);
+            input.select();
+            document.body.removeChild(input);
+        }
+    }
+</script>
+</body>
+</html>
